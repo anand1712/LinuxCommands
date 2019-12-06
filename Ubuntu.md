@@ -1,2 +1,2 @@
-Check diff versions of a package in ubuntu
-apt-cache madison <package>
+### Check diff versions of a package in ubuntu
+`# apt-cache madison <package>`
