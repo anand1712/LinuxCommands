@@ -6,3 +6,7 @@
 git checkout mybranch
 git reset --hard mainbranch
 ```
+#### Cherrypick a commit from a different branch
+```
+git cherrypick <commitid>
+```
