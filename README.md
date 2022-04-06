@@ -20,3 +20,10 @@ git push -d <branch name>
 ```
 lsof -p <pid>
 ```
+# Docker
+#### Delete all docker images from the system
+```
+lsof -p <pid>
+```
+docker rmi -f `docker images -aq`
+```
