@@ -10,3 +10,13 @@ git reset --hard mainbranch
 ```
 git cherrypick <commitid>
 ```
+#### Delete a branch from remote
+```
+git push -d <branch name>
+```
+
+# Linux
+#### List of open files by a process
+```
+lsof -p <pid>
+```
