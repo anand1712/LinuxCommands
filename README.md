@@ -14,7 +14,14 @@ git cherrypick <commitid>
 ```
 git push -d <branch name>
 ```
-
+#### Create a Patch from last commited change
+```
+git diff HEAD~ > <somefile>.diff
+```
+#### Apply a Patch from diff
+```
+git apply < <somefile>.diff
+```
 # Linux
 #### List of open files by a process
 ```
