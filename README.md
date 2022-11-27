@@ -61,3 +61,9 @@ openssl x509 -noout -text -in server-crt.pem
 openssl x509 -noout -text -in client1-crt.pem
 openssl x509 -noout -text -in ca-crt.pem
 ```
+
+# GRPC
+#### Generating go stubs from the proto file
+```
+protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative <filename>.proto
+```
