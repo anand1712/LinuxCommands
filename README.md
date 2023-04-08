@@ -67,3 +67,8 @@ openssl x509 -noout -text -in ca-crt.pem
 ```
 protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative <filename>.proto
 ```
+# Kubernetes
+kubeadm reset
+kubeadm init --pod-network-cidr=192.168.0.0/16
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
