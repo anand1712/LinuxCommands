@@ -72,11 +72,12 @@ protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=p
 kubeadm reset
 ctr -n k8s.io c rm $(ctr -n k8s.io c ls -q)
 ctr -n k8s.io i rm $(ctr -n k8s.io i ls -q )
-kubeadm init --pod-network-cidr=192.168.0.0/16
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
+kubeadm init --pod-network-cidr=192.168.0.0/16 
 rm -rf $HOME/.kube
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
+kubectl taint node master-node node-role.kubernetes.io/control-plane:NoSchedule-
 ```
