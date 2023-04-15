@@ -81,4 +81,5 @@ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
 kubectl taint node master-node node-role.kubernetes.io/control-plane:NoSchedule-
 kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.24/deploy/local-path-storage.yaml
+kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
